@@ -23,7 +23,8 @@ const (
 )
 
 func main() {
-	handler := scp.NewFileSystemHandler("/home/timmy/test")
+	fromHandler := scp.NewFileSystemHandler("/home/timmy/test")
+	toHandler := scp.NewFileSystemHandler("/home/timmy/test2")
 	s, err := wish.NewServer(
 		wish.WithAddress(fmt.Sprintf("%s:%d", host, port)),
 		wish.WithHostKeyPath(".ssh/term_info_ed25519"),
@@ -44,6 +45,8 @@ func main() {
 			done <- nil
 		}
 	}()
+
+	scp.
 
 	<-done
 	log.Info("Stopping SSH server")
