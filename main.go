@@ -29,7 +29,7 @@ func main() {
 		wish.WithAddress(fmt.Sprintf("%s:%d", host, port)),
 		wish.WithHostKeyPath(".ssh/term_info_ed25519"),
 		wish.WithMiddleware(
-			scp.Middleware(handler, handler),
+			scp.Middleware(toHandler, fromHandler),
 		),
 	)
 	if err != nil {
@@ -45,8 +45,6 @@ func main() {
 			done <- nil
 		}
 	}()
-
-	scp.
 
 	<-done
 	log.Info("Stopping SSH server")
