@@ -22,7 +22,7 @@ import (
 
 const (
 	port    = 23233
-	host    = "localhost"
+	host    = "192.168.1.88"
 	repoDir = ".repos"
 )
 
