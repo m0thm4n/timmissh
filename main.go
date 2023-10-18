@@ -18,7 +18,7 @@ import (
 )
 
 const (
-	host = "localhost"
+	host = "192.168.1.88"
 	port = 23235
 )
 
